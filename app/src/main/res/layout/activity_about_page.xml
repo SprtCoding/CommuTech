@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutPage">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/endColor"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/back"
+                android:id="@+id/backBtn"
+                app:tint="@color/white" />
+
+            <!-- Label or text view -->
+            <TextView
+                android:id="@+id/label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/backBtn"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="About"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nav"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="About Us"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="The CommuTech Developer aims to gather data regarding the Tricycle Driver/Owner's information
+that will serve as a record in the admin of the campus to help the parents track their child by also receiving a notification via text message regarding the location of their child that will generate from QR Code when scanned.
+We believe that this software application can help increase the safety of the student.
+For more inquiries and suggestions, please email at CommuTech@gmail.com"
+                android:justificationMode="inter_word"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:text="How to use"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="1. First, the student and parents sign up on the Commu-Tech App."
+                android:justificationMode="inter_word"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="2.	When the student is logged in, the QR Code Scanner will be displayed and when parents are logged in, the GPS Tracker will be displayed."
+                android:textSize="18sp"
+                android:justificationMode="inter_word"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="3. The student will scan the QR code on the tricycle."
+                android:textSize="18sp"
+                android:justificationMode="inter_word"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="4.	After scanning the QR Code, the personal information of the Tricycle Driver will be seen including Driver license, Vehicle registration number, Franchise number and Location where the student rode and the student will send it to the parent through SMS Notification and it will be saved as a record in Commu-Tech admin."
+                android:textSize="18sp"
+                android:justificationMode="inter_word"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="5.	In Case of Emergency, the student can send an SMS notification to parents by mark checking the emergency textbox before sending the SMS notification."
+                android:textSize="18sp"
+                android:justificationMode="inter_word"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:text="6.	When the parent or guardian receives the SMS Notification from the student, parents or guardians will open their app and will be able to track the student’s whereabouts’ through location sharing.6.	When the parent or guardian receives the SMS Notification from the student, parents or guardians will open their app and will be able to track the student’s whereabouts’ through location sharing."
+                android:textSize="18sp"
+                android:justificationMode="inter_word"
+                android:layout_gravity="center"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

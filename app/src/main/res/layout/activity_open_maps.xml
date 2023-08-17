@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OpenMaps">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        android:layout_below="@id/nav"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:layout="@layout/support_simple_spinner_dropdown_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/info"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:backgroundTint="@color/startColor"
+        app:tint="@color/white"
+        android:id="@+id/aboutBtn"/>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/endColor"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/logoutPBtn"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="location"
+                android:id="@+id/location"
+                android:textColor="@color/white"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textAppearance="@style/TextAppearance.Material3.LabelLarge"/>
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/logout"
+                android:id="@+id/logoutPBtn"
+                android:scaleType="centerInside"
+                android:foregroundTint="@color/white"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</RelativeLayout>

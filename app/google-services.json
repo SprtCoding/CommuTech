@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "846735248260",
+    "firebase_url": "https://commutech-de260-default-rtdb.firebaseio.com",
+    "project_id": "commutech-de260",
+    "storage_bucket": "commutech-de260.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846735248260:android:46aa7c2988100a06a32bd1",
+        "android_client_info": {
+          "package_name": "com.sprtcoding.commutech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846735248260-kr7q034p9j086efu513mv1hnol0r44cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtSSvxrp4Cx4bXWrv1gUZ6LqAFL-chd1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846735248260-kr7q034p9j086efu513mv1hnol0r44cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

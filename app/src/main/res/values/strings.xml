@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CommuTech</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="full_name">Full Name</string>
+    <string name="address">Address</string>
+    <string name="contact_no">Contact No.</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="signup">Signup</string>
+    <string name="student_s_full_name">Student\'s Full Name</string>
+    <string name="title_activity_track_your_child">TrackYourChild</string>
+    <string name="parents_contact_no">Parents Contact No.</string>
+    <string name="privacy_policy_text">In accordance with Republic Act 10173 of the Data Privacy Act of 2012, I consent to the following terms and conditions on the collection, use and disclosure of my personal data. \n\nPlease read the Privacy Notice before you click the Agree and continue button. \n\nI am aware that Commu- Tech Admin has collected and stored my personal data during the Registration. These data include my: \n\n1. Demographic profile \n2. Exact Address \n3. Contact number and \n4. email address. \n\nI consent to disclose my personal Information for Commu- Tech Software Application. \n\nI have read the Commu-Tech Software Application commitment to Data Privacy.</string>
+</resources>

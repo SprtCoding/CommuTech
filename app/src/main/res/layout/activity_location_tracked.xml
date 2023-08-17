@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    tools:context=".LocationTracked">
+
+    <com.airbnb.lottie.LottieAnimationView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        app:lottie_rawRes="@raw/locationpin"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_repeatMode="restart"
+        android:id="@+id/locationPin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your location is being Tracked. Please do not close the app until you are in your destination. Thank you!"
+        android:fontFamily="@font/comfortaa"
+        android:textAlignment="center"
+        android:textSize="@dimen/_11ssp"
+        android:letterSpacing=".2"
+        android:textColor="@color/white"
+        android:lineHeight="@dimen/_30ssp"
+        android:padding="@dimen/_12sdp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:id="@+id/stopBtn"
+        app:iconGravity="textStart"
+        app:icon="@drawable/baseline_stop_24"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:cornerRadius="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Stop Sharing Location"
+        android:textAllCaps="false"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="@dimen/_11ssp"
+        android:backgroundTint="#E84B63"/>
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Data Privacy agreement (Please read and agree to the terms to proceed)"
+                android:textColor="@color/black"
+                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:textSize="@dimen/_15ssp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/privacy_policy_text"
+                android:textColor="@color/black"
+                android:fontFamily="@font/baloo_bhai_2"
+                android:textSize="@dimen/_15ssp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continueBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/comfortaa"
+                android:text="Agree and Continue"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_22sdp"
+                android:paddingEnd="@dimen/_22sdp"
+                app:cornerRadius="@dimen/_5sdp"
+                app:strokeColor="@color/endColor" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.cardview.widget.CardView>

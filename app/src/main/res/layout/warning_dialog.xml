@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/closeDialogBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/baseline_close_24"
+            android:background="@android:color/transparent"
+            android:layout_gravity="right|top"
+            android:contentDescription="@string/app_name"
+            app:tint="@color/startColor" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_100sdp"
+            app:lottie_rawRes="@raw/warning"
+            app:lottie_autoPlay="true"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Warning!"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="#FFA000"
+            android:textSize="@dimen/_25ssp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/warningMSG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text=""
+            android:fontFamily="@font/comfortaa"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11ssp"
+            android:layout_gravity="center_horizontal"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/okBtn"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Ok"
+            android:textColor="#f4f4f4"
+            android:fontFamily="@font/comfortaa"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_15ssp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
