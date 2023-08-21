@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class LoginPage extends AppCompatActivity {
     private TextInputEditText _email, _password;
     private LoadingDialog loadingDialog;
     private ImageButton _closeDialogBtn, _successCloseBtn;
+    private ImageView _aboutBtn;
     FirebaseAuth mAuth;
     DatabaseReference _userRef, _userTokenRef;
     FirebaseFirestore userDB;
@@ -202,6 +204,18 @@ public class LoginPage extends AppCompatActivity {
             };
             handler.postDelayed(runnable, 2000);
         });
+
+        _aboutBtn.setOnClickListener(view -> {
+            loadingDialog.show();
+            Handler handler = new Handler();
+            Runnable runnable = () -> {
+                loadingDialog.dismiss();
+                mAuth.signOut();
+                Intent intent = new Intent(this, AboutPage.class);
+                startActivity(intent);
+            };
+            handler.postDelayed(runnable, 3000);
+        });
     }
 
     private void _var() {
@@ -209,6 +223,7 @@ public class LoginPage extends AppCompatActivity {
         _loginBtn = findViewById(R.id.loginBtn);
         _email = findViewById(R.id.emailET);
         _password = findViewById(R.id.passET);
+        _aboutBtn = findViewById(R.id.aboutBtn);
         _forgotPasswordBtn = findViewById(R.id.forgotPasswordBtn);
     }
 

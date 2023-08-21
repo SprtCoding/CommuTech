@@ -55,54 +55,9 @@ public class SearchParents extends AppCompatActivity {
 
         parentsRV.setAdapter(parentFirestoreAdapter);
 
-        // Add a listener to the FirestoreRecyclerAdapter to determine if it's empty
-//        parentFirestoreAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-//            @Override
-//            public void onItemRangeInserted(int positionStart, int itemCount) {
-//                super.onItemRangeInserted(positionStart, itemCount);
-//                // Called when items are inserted into the adapter
-//                // This indicates that the collection is not empty
-//                _no_post_prePostTest_ll.setVisibility(View.GONE);
-//                _prePostTestRV.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onItemRangeRemoved(int positionStart, int itemCount) {
-//                super.onItemRangeRemoved(positionStart, itemCount);
-//                // Called when items are removed from the adapter
-//                // You can check if the adapter is now empty and handle it accordingly
-//                if (testAdapter.getItemCount() == 0) {
-//                    // Collection is empty
-//                    // You can handle this case here
-//                    _no_post_prePostTest_ll.setVisibility(View.VISIBLE);
-//                    _prePostTestRV.setVisibility(View.GONE);
-//                }else {
-//                    _no_post_prePostTest_ll.setVisibility(View.GONE);
-//                    _prePostTestRV.setVisibility(View.VISIBLE);
-//                }
-//            }
-//        });
-
-
-//        userQuery.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.exists()) {
-//                    parentsModels.clear();
-//                    for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//                        ParentsModel parents = dataSnapshot.getValue(ParentsModel.class);
-//                        parentsModels.add(parents);
-//                    }
-//                    parentsAdapter = new ParentsAdapter(SearchParents.this, parentsModels);
-//                    parentsRV.setAdapter(parentsAdapter);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Toast.makeText(SearchParents.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        backBtn.setOnClickListener(view -> {
+            finish();
+        });
 
     }
 

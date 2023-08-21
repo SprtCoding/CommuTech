@@ -54,7 +54,7 @@ public class SendNotification extends AppCompatActivity {
     private static double lon = 0;
     private static String locationName, parentsName, sender_Name, parent_id;
     FirebaseFirestore db;
-    CollectionReference userCollectionRef;
+    CollectionReference userCollectionRef, driverCollectionRef;
 
 
     @Override
@@ -70,6 +70,7 @@ public class SendNotification extends AppCompatActivity {
         DBQuery.g_firestore = FirebaseFirestore.getInstance();
 
         userCollectionRef = db.collection("USERS");
+        driverCollectionRef = db.collection("DRIVERS");
 
         mAuth = FirebaseAuth.getInstance();
         mdb = FirebaseDatabase.getInstance();
@@ -91,27 +92,22 @@ public class SendNotification extends AppCompatActivity {
                                 _sName.setText(sender_Name);
                             }).addOnFailureListener(e -> Toast.makeText(SendNotification.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
 
-            _driversRef.child(qrCode).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.exists()) {
-                        String driverName = snapshot.child("Fullname").getValue(String.class);
-                        String driverLNo = snapshot.child("LicenseNo").getValue(String.class);
-                        String driverVRegNo = snapshot.child("VehicleNo").getValue(String.class);
-                        String driverFranchiseNo = snapshot.child("FranchiseNo").getValue(String.class);
+            //get driver's information from fire store
+            driverCollectionRef.document(qrCode).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if(documentSnapshot.exists()) {
+                            String driverName = documentSnapshot.getString("DRIVERS_NAME");
+                            String driverLNo = documentSnapshot.getString("LICENSE_NO");
+                            String driverVRegNo = documentSnapshot.getString("REG_NO");
+                            String driverFranchiseNo = documentSnapshot.getString("FRANCHISE_NO");
 
-                        _dName.setText(driverName);
-                        _dLNo.setText(driverLNo);
-                        _vRegNo.setText(driverVRegNo);
-                        _franchiseNo.setText(driverFranchiseNo);
-                    }
-                }
+                            _dName.setText(driverName);
+                            _dLNo.setText(driverLNo);
+                            _vRegNo.setText(driverVRegNo);
+                            _franchiseNo.setText(driverFranchiseNo);
+                        }
+                    }).addOnFailureListener(e -> Toast.makeText(SendNotification.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(SendNotification.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
         }
 
         // Define the location callback

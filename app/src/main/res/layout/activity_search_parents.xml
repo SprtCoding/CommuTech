@@ -16,17 +16,38 @@
         android:layout_width="match_parent"
         android:layout_height="60dp">
 
-        <ImageView
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:src="@drawable/back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:scaleType="centerInside"
-            android:id="@+id/backBtn"
-            app:tint="@color/white" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/back"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:scaleType="centerInside"
+                android:id="@+id/backBtn"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_toEndOf="@id/backBtn"
+                android:layout_alignTop="@id/backBtn"
+                android:layout_alignBottom="@id/backBtn"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="Your Parent"
+                android:textColor="@color/white"
+                android:letterSpacing=".1"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
     </com.google.android.material.navigation.NavigationView>
 
@@ -65,7 +86,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:padding="@dimen/_15sdp"
-            android:text="Make sure you send your location to your mothers name. Do not send it to other! Thank you!"
+            android:text="Make sure you send your location to your parents name. Thank you!"
             android:textSize="@dimen/_11ssp"
             android:fontFamily="@font/comfortaa"
             android:layout_gravity="center"
