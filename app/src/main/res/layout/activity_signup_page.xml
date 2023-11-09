@@ -171,6 +171,7 @@
                     app:ccp_defaultNameCode="PH"
                     app:ccp_arrowSize="@dimen/_20sdp"
                     app:ccp_hideNameCode="true"
+                    app:ccp_textColor="@color/cardview_dark_background"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
@@ -299,7 +300,7 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12ssp"
                 android:buttonTint="@color/white"
-                android:fontFamily="@font/baloo_bhai_2_semibold"
+                android:fontFamily="@font/comfortaa_bold"
                 android:id="@+id/dataPrivacyCB"/>
 
             <com.google.android.material.button.MaterialButton

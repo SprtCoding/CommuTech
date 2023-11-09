@@ -36,7 +36,7 @@ import java.util.List;
 
 public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback {
 
-    private ImageView _logoutBtn, _aboutBtn;
+    private ImageView _logoutBtn;
     private LoadingDialog loadingDialog;
     FirebaseAuth mAuth;
     boolean isLoggedOut;
@@ -70,18 +70,6 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback 
             handler.postDelayed(runnable, 3000);
         });
 
-        _aboutBtn.setOnClickListener(view -> {
-            loadingDialog.show();
-            Handler handler = new Handler();
-            Runnable runnable = () -> {
-                loadingDialog.dismiss();
-                mAuth.signOut();
-                Intent intent = new Intent(this, AboutPage.class);
-                startActivity(intent);
-            };
-            handler.postDelayed(runnable, 3000);
-        });
-
         SurfaceHolder surfaceHolder = cameraPreview.getHolder();
         surfaceHolder.addCallback(this);
 
@@ -90,7 +78,6 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback 
 
     private void _var() {
         _logoutBtn = findViewById(R.id.logoutBtn);
-        _aboutBtn = findViewById(R.id.aboutBtn);
         cameraPreview = findViewById(R.id.camera_preview);
     }
 

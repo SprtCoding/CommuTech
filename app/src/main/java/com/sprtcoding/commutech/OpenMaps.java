@@ -54,11 +54,10 @@ import java.util.Locale;
 public class OpenMaps extends FragmentActivity implements OnMapReadyCallback {
     GoogleMap gMap;
     FrameLayout map;
-    private int ACCESS_LOCATION_REQUEST_CODE = 10001;
+    private final int ACCESS_LOCATION_REQUEST_CODE = 10001;
     ImageView logOut;
     private LoadingDialog loadingDialog;
     private TextView locationTxt;
-    private FloatingActionButton aboutBtn;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
     DocumentReference locationDocumentRef, userDocumentRef;
@@ -73,7 +72,6 @@ public class OpenMaps extends FragmentActivity implements OnMapReadyCallback {
         loadingDialog = new LoadingDialog(this);
 
         locationTxt = findViewById(R.id.location);
-        aboutBtn = findViewById(R.id.aboutBtn);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -100,19 +98,6 @@ public class OpenMaps extends FragmentActivity implements OnMapReadyCallback {
                 Intent intent = new Intent(OpenMaps.this, LoginPage.class);
                 startActivity(intent);
                 finish();
-            };
-            handler.postDelayed(runnable, 3000);
-        });
-
-        aboutBtn.setOnClickListener(view -> {
-            loadingDialog.show();
-            Handler handler = new Handler();
-            Runnable runnable = () -> {
-                loadingDialog.dismiss();
-                FirebaseAuth mAuth = FirebaseAuth.getInstance();
-                mAuth.signOut();
-                Intent intent = new Intent(OpenMaps.this, AboutPage.class);
-                startActivity(intent);
             };
             handler.postDelayed(runnable, 3000);
         });

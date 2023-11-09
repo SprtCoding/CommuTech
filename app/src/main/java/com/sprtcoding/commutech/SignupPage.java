@@ -200,8 +200,8 @@ public class SignupPage extends AppCompatActivity {
                                     address,
                                     mAuth.getCurrentUser().getUid(),
                                     _selectedOption,
-                                    _ccp_parent.getSelectedCountryCodeWithPlus() + contact,
-                                    _ccp_parent.getSelectedCountryCodeWithPlus() + parentsContact,
+                                    _ccp.getSelectedCountryCode() + contact,
+                                    _ccp_parent.getSelectedCountryCode() + parentsContact,
                                     parentsName,
                                     new MyCompleteListener() {
                                 @Override
@@ -243,7 +243,16 @@ public class SignupPage extends AppCompatActivity {
                                         _userTokenRef.child(mAuth.getCurrentUser().getUid()).child("token").setValue(token);
                                     });
 
-                            DBQuery.createUserData(email, fullname, address, mAuth.getCurrentUser().getUid(), _selectedOption, _ccp_parent.getSelectedCountryCodeWithPlus() + contact, null, null, new MyCompleteListener() {
+                            DBQuery.createUserData(
+                                    email,
+                                    fullname,
+                                    address,
+                                    mAuth.getCurrentUser().getUid(),
+                                    _selectedOption,
+                                    _ccp_parent.getSelectedCountryCode() + contact,
+                                    null,
+                                    null,
+                                    new MyCompleteListener() {
                                 @Override
                                 public void onSuccess() {
                                     loadingDialog.dismiss();

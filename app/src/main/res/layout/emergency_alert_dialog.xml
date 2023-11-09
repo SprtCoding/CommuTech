@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Confirmation Message for Emergency Alert"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/_15ssp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please confirm that this is a genuine emergency."
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_15ssp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note_only_press"
+                android:textColor="#C54B60"
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_12ssp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/press_yes_to_confirm"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_15ssp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/press_no_if_this_is_a_false_alarm"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_15ssp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This confirmation message ensures that the sender of the alert has a chance to reconsider and prevents false alarms from being immediately sent to parents. It encourages responsible use of the emergency alert system."
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_15ssp"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/after_the_user_presses_yes"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textSize="@dimen/_15ssp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:padding="@dimen/_10sdp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/yesBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Yes"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    android:padding="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_22sdp"
+                    android:paddingEnd="@dimen/_22sdp"
+                    app:cornerRadius="@dimen/_5sdp"
+                    app:strokeColor="@color/endColor" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/noBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comfortaa"
+                    android:layout_marginStart="20dp"
+                    android:text="No"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    android:padding="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_22sdp"
+                    android:paddingEnd="@dimen/_22sdp"
+                    app:cornerRadius="@dimen/_5sdp"
+                    android:backgroundTint="#C54B60"
+                    app:strokeColor="@color/endColor" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.cardview.widget.CardView>

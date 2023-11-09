@@ -21,6 +21,9 @@
         android:theme="@style/Theme.CommuTech"
         tools:targetApi="31">
         <activity
+            android:name=".GetStarted.GetStartedPage"
+            android:exported="false" />
+        <activity
             android:name=".AboutPage"
             android:exported="false" />
         <activity

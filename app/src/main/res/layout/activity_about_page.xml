@@ -78,10 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo_bhai_2"
-                android:text="The CommuTech Developer aims to gather data regarding the Tricycle Driver/Owner's information
-that will serve as a record in the admin of the campus to help the parents track their child by also receiving a notification via text message regarding the location of their child that will generate from QR Code when scanned.
-We believe that this software application can help increase the safety of the student.
-For more inquiries and suggestions, please email at CommuTech@gmail.com"
+                android:text="@string/about_us"
                 android:justificationMode="inter_word"
                 android:textSize="18sp"
                 android:layout_gravity="center"

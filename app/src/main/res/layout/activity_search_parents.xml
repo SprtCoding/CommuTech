@@ -52,6 +52,49 @@
     </com.google.android.material.navigation.NavigationView>
 
     <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nav"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/no_data"
+            android:contentDescription="@string/app_name"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_22ssp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:textColor="@color/white"
+            android:text="No parent found!"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13ssp"
+            android:fontFamily="@font/comfortaa"
+            android:textColor="@color/white"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textAlignment="center"
+            android:text="Please tell your parent to create account."/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/with_data"
         android:layout_below="@id/nav"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
@@ -62,17 +105,20 @@
 
         <ImageView
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_170sdp"
             android:layout_gravity="center"
-            android:src="@drawable/baseline_escalator_warning_24"
+            android:src="@drawable/parents"
             android:contentDescription="@string/app_name"
             android:layout_marginBottom="@dimen/_10sdp"/>
 
         <TextView
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Send Location to your parents"
+            android:textAlignment="center"
             android:textSize="@dimen/_15ssp"
             android:fontFamily="@font/comfortaa_bold"
             android:layout_gravity="center"

@@ -8,17 +8,6 @@
     android:background="@drawable/bg"
     tools:context=".LoginPage">
 
-    <ImageView
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/info"
-        android:id="@+id/aboutBtn"
-        app:tint="@color/white" />
-
     <LinearLayout
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
@@ -97,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Forgot Password?"
-                android:textColor="#BC5D5D"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="@dimen/_11ssp"
                 android:fontFamily="@font/comfortaa"/>
 

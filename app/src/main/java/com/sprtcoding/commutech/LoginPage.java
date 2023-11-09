@@ -1,11 +1,9 @@
 package com.sprtcoding.commutech;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -15,23 +13,22 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.sprtcoding.commutech.GetStarted.GetStartedPage;
 import com.sprtcoding.commutech.Loading.LoadingDialog;
+
+import java.util.Objects;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -40,7 +37,6 @@ public class LoginPage extends AppCompatActivity {
     private TextInputEditText _email, _password;
     private LoadingDialog loadingDialog;
     private ImageButton _closeDialogBtn, _successCloseBtn;
-    private ImageView _aboutBtn;
     FirebaseAuth mAuth;
     DatabaseReference _userRef, _userTokenRef;
     FirebaseFirestore userDB;
@@ -84,7 +80,7 @@ public class LoginPage extends AppCompatActivity {
 
         final AlertDialog warningDialog = warningAlertDialogBuilder.create();
 
-        warningDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Objects.requireNonNull(warningDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         warningDialog.setCanceledOnTouchOutside(false);
 
         _closeDialogBtn.setOnClickListener(view -> {
@@ -103,8 +99,8 @@ public class LoginPage extends AppCompatActivity {
 
         _loginBtn.setOnClickListener(view -> {
             loadingDialog.show();
-            String email = _email.getText().toString().trim();
-            String password = _password.getText().toString();
+            String email = Objects.requireNonNull(_email.getText()).toString().trim();
+            String password = Objects.requireNonNull(_password.getText()).toString();
             if(TextUtils.isEmpty(email)) {
                 loadingDialog.dismiss();
                 _alertMSG.setText("Email is empty!");
@@ -117,12 +113,12 @@ public class LoginPage extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if(task.isSuccessful()) {
 
-                        userDocRef = userDB.collection("USERS").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        userDocRef = userDB.collection("USERS").document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
                         userDocRef.get().addOnCompleteListener(task1 -> {
                             if(task1.isSuccessful()) {
                                 DocumentSnapshot document = task1.getResult();
                                 if(document.contains("ACCOUNT_TYPE")) {
-                                    String type = document.get("ACCOUNT_TYPE").toString();
+                                    String type = Objects.requireNonNull(document.get("ACCOUNT_TYPE")).toString();
 
                                     if(type.equals("Student")) {
                                         loadingDialog.dismiss();
@@ -130,13 +126,13 @@ public class LoginPage extends AppCompatActivity {
                                         successDialog.show();
                                         _successCloseBtn.setOnClickListener(view1 -> {
                                             successDialog.cancel();
-                                            Intent intent = new Intent(LoginPage.this, ScanQR.class);
+                                            Intent intent = new Intent(LoginPage.this, GetStartedPage.class);
                                             startActivity(intent);
                                             finish();
                                         });
                                         _successOkBtn.setOnClickListener(view1 -> {
                                             successDialog.cancel();
-                                            Intent intent = new Intent(LoginPage.this, ScanQR.class);
+                                            Intent intent = new Intent(LoginPage.this, GetStartedPage.class);
                                             startActivity(intent);
                                             finish();
                                         });
@@ -153,20 +149,20 @@ public class LoginPage extends AppCompatActivity {
 
                                                     // Get new FCM registration token
                                                     String token = task2.getResult();
-                                                    _userTokenRef.child(mAuth.getCurrentUser().getUid()).child("token").setValue(token);
+                                                    _userTokenRef.child(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()).child("token").setValue(token);
                                                 });
 
                                         _successAlertMSG.setText("Login Successfully!");
                                         successDialog.show();
                                         _successCloseBtn.setOnClickListener(view1 -> {
                                             successDialog.cancel();
-                                            Intent intent = new Intent(LoginPage.this, OpenMaps.class);
+                                            Intent intent = new Intent(LoginPage.this, GetStartedPage.class);
                                             startActivity(intent);
                                             finish();
                                         });
                                         _successOkBtn.setOnClickListener(view1 -> {
                                             successDialog.cancel();
-                                            Intent intent = new Intent(LoginPage.this, OpenMaps.class);
+                                            Intent intent = new Intent(LoginPage.this, GetStartedPage.class);
                                             startActivity(intent);
                                             finish();
                                         });
@@ -204,18 +200,6 @@ public class LoginPage extends AppCompatActivity {
             };
             handler.postDelayed(runnable, 2000);
         });
-
-        _aboutBtn.setOnClickListener(view -> {
-            loadingDialog.show();
-            Handler handler = new Handler();
-            Runnable runnable = () -> {
-                loadingDialog.dismiss();
-                mAuth.signOut();
-                Intent intent = new Intent(this, AboutPage.class);
-                startActivity(intent);
-            };
-            handler.postDelayed(runnable, 3000);
-        });
     }
 
     private void _var() {
@@ -223,7 +207,6 @@ public class LoginPage extends AppCompatActivity {
         _loginBtn = findViewById(R.id.loginBtn);
         _email = findViewById(R.id.emailET);
         _password = findViewById(R.id.passET);
-        _aboutBtn = findViewById(R.id.aboutBtn);
         _forgotPasswordBtn = findViewById(R.id.forgotPasswordBtn);
     }
 

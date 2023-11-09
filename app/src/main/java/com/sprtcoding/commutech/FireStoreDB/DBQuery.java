@@ -62,12 +62,13 @@ public class DBQuery {
         locationShareDoc.set(locationShareData);
     }
 
-    public static void setSMSRecentHistory(String id, String studentName, String location, String driverName, String DriverLicense,
+    public static void setSMSRecentHistory(String id, String studentName, String sms_type, String location, String driverName, String DriverLicense,
                                            String DriverRegNo, String DriverFranchise, String Date, String Time) {
         Map<String, Object> smsRecordsData = new HashMap<>();
 
         smsRecordsData.put("ID", id);
         smsRecordsData.put("STUDENT_NAME", studentName);
+        smsRecordsData.put("SMS_TYPE", sms_type);
         smsRecordsData.put("LOCATION", location);
         smsRecordsData.put("DRIVER_NAME", driverName);
         smsRecordsData.put("DRIVER_LICENSE", DriverLicense);

@@ -67,10 +67,10 @@
 
             <ImageView
                 android:layout_marginTop="@dimen/_20sdp"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/baseline_textsms_24"
+                android:src="@drawable/send_sms"
                 android:contentDescription="@string/app_name"
                 android:layout_marginBottom="@dimen/_10sdp"/>
 
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Send SMS"
-                android:textSize="@dimen/_17ssp"
+                android:textSize="@dimen/_22ssp"
                 android:fontFamily="@font/comfortaa_bold"
                 android:textColor="@color/startColor"
                 android:layout_gravity="center"

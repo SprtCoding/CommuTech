@@ -33,6 +33,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.sprtcoding.commutech.FireStoreDB.DBQuery;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.List;
@@ -41,7 +42,7 @@ import java.util.Locale;
 public class SendNotification extends AppCompatActivity {
 
     private TextView _sName, _dName, _dLNo, _vRegNo, _franchiseNo, _Location;
-    private ImageView _backBtn;
+    private ImageView _backBtn, drivers_pic;
     private MaterialButton _sendBtn, _viewBtn;
     FirebaseAuth mAuth;
     FirebaseDatabase mdb;
@@ -100,11 +101,13 @@ public class SendNotification extends AppCompatActivity {
                             String driverLNo = documentSnapshot.getString("LICENSE_NO");
                             String driverVRegNo = documentSnapshot.getString("REG_NO");
                             String driverFranchiseNo = documentSnapshot.getString("FRANCHISE_NO");
+                            String driverPhoto = documentSnapshot.getString("DRIVER_PHOTO");
 
                             _dName.setText(driverName);
                             _dLNo.setText(driverLNo);
                             _vRegNo.setText(driverVRegNo);
                             _franchiseNo.setText(driverFranchiseNo);
+                            //Picasso.get().load(driverPhoto).fit().into(drivers_pic);
                         }
                     }).addOnFailureListener(e -> Toast.makeText(SendNotification.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
 
@@ -162,6 +165,7 @@ public class SendNotification extends AppCompatActivity {
         _backBtn = findViewById(R.id.backBtn);
         _sendBtn = findViewById(R.id.sendInfoBtn);
         _viewBtn = findViewById(R.id.viewBtn);
+        drivers_pic = findViewById(R.id.drivers_pic);
     }
 
     @Override

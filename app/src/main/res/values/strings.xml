@@ -14,4 +14,35 @@
     <string name="title_activity_track_your_child">TrackYourChild</string>
     <string name="parents_contact_no">Parents Contact No.</string>
     <string name="privacy_policy_text">In accordance with Republic Act 10173 of the Data Privacy Act of 2012, I consent to the following terms and conditions on the collection, use and disclosure of my personal data. \n\nPlease read the Privacy Notice before you click the Agree and continue button. \n\nI am aware that Commu- Tech Admin has collected and stored my personal data during the Registration. These data include my: \n\n1. Demographic profile \n2. Exact Address \n3. Contact number and \n4. email address. \n\nI consent to disclose my personal Information for Commu- Tech Software Application. \n\nI have read the Commu-Tech Software Application commitment to Data Privacy.</string>
+    <string name="about_us">Our Goals\n\n
+        CommuTech Software Application combines cutting-edge technology with a
+        focus on safety to provide a valuable solution for parents, students,
+        and tricycle operators. It fosters a sense of security and peace of
+        mind in an essential aspect of a students daily life – their
+        commute to and from school.\n\n
+        Enhanced safety for students during their tricycle commute.\n
+        Peace of mind for parents through real-time tracking and notifications.\n
+        Improved communication between parents, students, and tricycle operators.\n
+    </string>
+    <string name="about_us_heading">About Us</string>
+
+    <string name="heading_1">Download</string>
+    <string name="heading_2">Create Account</string>
+    <string name="heading_3">Features</string>
+    <string name="heading_4">Scan QR Code</string>
+    <string name="heading_5">Drivers Information</string>
+    <string name="heading_6">Emergency Text Message</string>
+    <string name="heading_7">Tracking</string>
+
+    <string name="desc_1">Install the CommuTech App in Android Phone.</string>
+    <string name="desc_2">The Student and Parents Sign Up on the CommuTech App.</string>
+    <string name="desc_3">When the Student is Logged In, the QR Code Scanner will be displayed and when Parents are Logged In, the GPS Tracker will be displayed.</string>
+    <string name="desc_4">The Student will scan the QR Code on the Tricycle.</string>
+    <string name="desc_5">After scanning the QR Code, the personal information of the Tricycle Driver will be seen including Driver License, Vehicle Registration Number, Franchise Number, and Location where the student rode and the student will send it to the parent through SMS Notification and it will be saved as a record in CommuTech Admin.</string>
+    <string name="desc_6">In Case of Emergency, the student can send an SMS Notification to parents by mark checking the emergency textbox before sending the sms notification.</string>
+    <string name="desc_7">When the Parent or Guardian receives the SMS Notification from the student, parents or guardians will open their app and will be able to track the student\'s where abouts through location sharing.</string>
+    <string name="note_only_press">Note: Only press \"YES\" if you are sure this is a real emergency. False alarms may delay responses to genuine emergencies.</string>
+    <string name="press_yes_to_confirm">Press \"YES\" to Confirm</string>
+    <string name="press_no_if_this_is_a_false_alarm">Press \"NO\" if this is a false alarm</string>
+    <string name="after_the_user_presses_yes">After the user presses \"YES\" to confirm the emergency, you can proceed to send the SMS notification to parents with the relevant information about the emergency situation and the student\'s location.</string>
 </resources>
