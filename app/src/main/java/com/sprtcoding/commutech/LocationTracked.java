@@ -8,24 +8,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
-
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.sprtcoding.commutech.FCM.FCMNotificationSender;
 
 public class LocationTracked extends AppCompatActivity {
-    private MaterialButton _stopSharingBtn;
+    MaterialButton _stopSharingBtn;
     String parentID, userToken, _userName;
-    private FirebaseAuth mAuth;
-    private DatabaseReference _userRef;
+    FirebaseAuth mAuth;
+    FirebaseUser mUSer;
+    FirebaseFirestore db;
+    CollectionReference userColRef;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -36,21 +36,22 @@ public class LocationTracked extends AppCompatActivity {
         Intent i = getIntent();
         parentID = i.getStringExtra("ParentID");
 
-        mAuth = FirebaseAuth.getInstance();
-        _userRef = FirebaseDatabase.getInstance().getReference("Users");
-        _userRef.child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-                    _userName = snapshot.child("Fullname").getValue(String.class);
-                }
-            }
+        db = FirebaseFirestore.getInstance();
+        userColRef = db.collection("USERS");
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(LocationTracked.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        mAuth = FirebaseAuth.getInstance();
+        mUSer = mAuth.getCurrentUser();
+
+        if(mUSer != null) {
+            userColRef.document(mUSer.getUid())
+                    .get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if(documentSnapshot.exists()) {
+                            _userName = documentSnapshot.getString("NAME");
+                        }
+                    })
+                    .addOnFailureListener(e -> Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show());
+        }
 
         _stopSharingBtn = findViewById(R.id.stopBtn);
 
@@ -89,7 +90,7 @@ public class LocationTracked extends AppCompatActivity {
                     getApplicationContext(),
                     userToken,
                     "CommuTech",
-                    StudentName + " ay nakarating na ng ligtas sa kanyang pinuntahan.\nMaraming salamat sa pag gamit ng aming app."
+                    "Ang iyong anak na si " + StudentName + " ay nakauwi na ng ligtas.\nMaraming salamat sa pag gamit ng application."
             );
         }, 3000);
     }
